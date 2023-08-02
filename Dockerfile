@@ -1,5 +1,6 @@
 FROM python:3.8-slim
 MAINTAINER YUNXIU
+VOLUME /templates
 LABEL org.opencontainers.image.title="iact3-action"
 LABEL version="1.0"
 COPY "entrypoint.sh" "/entrypoint.sh"
