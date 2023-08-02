@@ -9,6 +9,11 @@ pwd resources
 ls resources
 echo "--"
 ls iact3-config
+echo "---"
+cat /github/workspace/iact3-config/resources/ipv4.yaml
+
+apt-get install tree
+tree ./
 
 for file in $INPUT_TEMPLATES; do
   echo "/iact3.py test run -t $file -c iact3-config/$file"
