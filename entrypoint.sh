@@ -12,8 +12,10 @@ for file in $INPUT_TEMPLATES; do
   fi
 
   if python /iact3.py test run -t $file -c iact3-config/${file%.*}.iact3.yml | grep -q 'CREATE_COMPLETE'; then
+    echo "000000000"
     exit 0
   else
+    echo "111111111"
     exit 1
   fi
 
