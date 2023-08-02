@@ -11,13 +11,10 @@ for file in $INPUT_TEMPLATES; do
     continue
   fi
 
-  python /iact3.py test run -t $file -c iact3-config/${file%.*}.iact3.yml
+#  python /iact3.py test run -t $file -c iact3-config/${file%.*}.iact3.yml
 
-  echo $file":file name"
   test_name=$(basename $file)
-  echo $test_name":test name1"
-  test_name=${file%.*}
-  echo $test_name":test name2"
+  test_name=${test_name%.*}
   test_name="test-${test_name}"
   echo $test_name":test name"
 #  if grep -q 'CREATE_COMPLETE' output.txt; then
