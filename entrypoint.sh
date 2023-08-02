@@ -13,8 +13,9 @@ for file in $INPUT_TEMPLATES; do
 
   python /iact3.py test run -t $file -c iact3-config/${file%.*}.iact3.yml
 
+  test_name=$(basename $str)
   test_name=${file%.*}
-  test_name="test-${test_name##/}"
+  test_name="test-${test_name}"
   echo $test_name":test name"
 #  if grep -q 'CREATE_COMPLETE' output.txt; then
 #    echo "000000000"
