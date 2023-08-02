@@ -13,8 +13,8 @@ for file in $INPUT_TEMPLATES; do
 
   python /iact3.py test run -t $file -c iact3-config/${file%.*}.iact3.yml
 
-  file_name = ${file%.*}
-  file_name = ${file_name##/}
+  file_name=${file%.*}
+  file_name=${file_name##/}
   echo $file_name":file name"
 #  if grep -q 'CREATE_COMPLETE' output.txt; then
 #    echo "000000000"
