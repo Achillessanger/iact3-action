@@ -8,6 +8,9 @@ inputs:
   access_key_secret:
     description: 'ALIBABA_CLOUD_ACCESS_KEY_SECRET'
     required: true
+  templates:
+    description: 'test templates path'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
