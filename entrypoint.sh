@@ -13,9 +13,9 @@ for file in $INPUT_TEMPLATES; do
 
   python /iact3.py test run -t $file -c iact3-config/${file%.*}.iact3.yml
 
-  file_name=${file%.*}
-  file_name=${file_name##/}
-  echo $file_name":file name"
+  test_name=${file%.*}
+  test_name=test-${test_name##/}
+  echo $test_name":test name"
 #  if grep -q 'CREATE_COMPLETE' output.txt; then
 #    echo "000000000"
 ##    exit 0
@@ -26,7 +26,7 @@ for file in $INPUT_TEMPLATES; do
   apt-get install tree
   tree ./
 
-  cat iact3_outputs/${file_name}-result.json
+  cat iact3_outputs/${test_name}-result.json
 
 
 
