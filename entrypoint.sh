@@ -19,11 +19,11 @@ for file in $INPUT_TEMPLATES; do
 
   cat iact3_outputs/${test_name}-result.json
 
-  test_result=$(jq '.Result' ${test_name}-result.json)
-  if [ "$test_result" == "Failed" ]; then
-    exit 1
-  else
+  test_result=$(jq '.Result' iact3_outputs/${test_name}-result.json)
+  if [ "$test_result" == "Success" ]; then
     exit 0
+  else
+    exit 1
   fi
 
 
