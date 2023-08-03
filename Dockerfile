@@ -8,7 +8,6 @@ COPY "requirements.txt" "/requirements.txt"
 COPY "iact3.py" "/iact3.py"
 COPY "./iact3" "/iact3"
 RUN chmod +x /entrypoint.sh
-RUN apt-get update && apt-get install -y gcc
+RUN apt-get update && apt-get install -y gcc && apt-get install -y jq
 RUN pip install -r /requirements.txt
-RUN apt-get install jq
 ENTRYPOINT ["/entrypoint.sh"]
