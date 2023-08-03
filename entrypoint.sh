@@ -6,7 +6,6 @@ export ALIBABA_CLOUD_ACCESS_KEY_SECRET=$INPUT_ACCESS_KEY_SECRET
 pass_test=1
 
 for file in $INPUT_TEMPLATES; do
-  echo "testing file name:"$file
   if [[ "$file" == .github* ]]
   then
     continue
