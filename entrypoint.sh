@@ -3,7 +3,7 @@
 
 export ALIBABA_CLOUD_ACCESS_KEY_ID=$INPUT_ACCESS_KEY_ID
 export ALIBABA_CLOUD_ACCESS_KEY_SECRET=$INPUT_ACCESS_KEY_SECRET
-
+pass_test=1
 
 for file in $INPUT_TEMPLATES; do
   if [[ "$file" == .github* ]]
@@ -21,11 +21,17 @@ for file in $INPUT_TEMPLATES; do
 
   test_result=$(jq '.Result' iact3_outputs/${test_name}-result.json)
 
-  if [[ $test_result = "\"Success\"" ]]; then
-    exit 0
-  else
-    exit 1
+
+  if [[ $test_result != "\"Success\"" ]]; then
+    pass_test=0
   fi
+
+if [ $pass_test -eq 1 ]
+then
+	exit 0
+else
+	exit 1
+fi
 
 
 
