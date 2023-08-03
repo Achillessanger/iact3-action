@@ -16,19 +16,15 @@ for file in $INPUT_TEMPLATES; do
   test_name=$(basename $file)
   test_name=${test_name%.*}
   test_name="test-${test_name}"
-  echo $test_name":test name"
-#  if grep -q 'CREATE_COMPLETE' output.txt; then
-#    echo "000000000"
-##    exit 0
-#  else
-#    echo "111111111"
-##    exit 1
-#  fi
-  apt-get install tree
-  tree ./
 
   cat iact3_outputs/${test_name}-result.json
 
+  test_result=$(jq '.Result' ${test_name}-result.json)
+  if [ "$test_result" == "Failed" ]; then
+    exit 1
+  else
+    exit 0
+  fi
 
 
 

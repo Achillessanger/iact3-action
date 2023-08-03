@@ -10,4 +10,5 @@ COPY "./iact3" "/iact3"
 RUN chmod +x /entrypoint.sh
 RUN apt-get update && apt-get install -y gcc
 RUN pip install -r /requirements.txt
+RUN apt-get install jq
 ENTRYPOINT ["/entrypoint.sh"]
