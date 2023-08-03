@@ -26,6 +26,7 @@ for file in $INPUT_TEMPLATES; do
   if [[ $test_result != "\"Success\"" ]]; then
     pass_test=0
   fi
+done
 
 if [ $pass_test -eq 1 ]
 then
@@ -38,7 +39,7 @@ fi
 
 
 #  python /iact3.py test run -t $file -c iact3-config/${file%.*}.iact3.yml
-done
+
 
 #echo $?":code"
 
