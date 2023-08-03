@@ -22,17 +22,11 @@ for file in $INPUT_TEMPLATES; do
   test_result=$(jq '.Result' iact3_outputs/${test_name}-result.json)
   echo $test_result":test_result"
   if [[ $test_result = "\"Success\"" ]]; then
-    echo "--"
-  else
-    echo "++"
-  fi
-  if [[ $test_result = "Success" ]]; then
-    echo "0"
     exit 0
   else
-    echo "1"
     exit 1
   fi
+
 
 
 
