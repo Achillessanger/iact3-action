@@ -27,9 +27,10 @@ for file in $INPUT_TEMPLATES; do
       pass_test=0
     fi
   else
-    python /iact3.py validate -t $file | grep "LegalTemplate" > output.txt
+    python /iact3.py validate -t $file  > output.txt
     echo "output.txt:\n"
     cat output.txt
+    ls
   fi
 done
 
