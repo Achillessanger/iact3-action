@@ -28,10 +28,10 @@ for file in $INPUT_TEMPLATES; do
     fi
   else
     python /iact3.py validate -t $file  >> output.txt 2>&1
-    echo "output.txt:\n"
-    cat output.txt
+    if not grep -q "LegalTemplate" output.txt; then
+      pass_test=0
+    fi
 
-    tree
   fi
 done
 
