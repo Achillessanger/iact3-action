@@ -27,10 +27,10 @@ for file in $INPUT_TEMPLATES; do
       pass_test=0
     fi
   else
-    python /iact3.py validate -t $file 2>&1  > output.txt
+    python /iact3.py validate -t $file  >> output.txt 2>&1
     echo "output.txt:\n"
     cat output.txt
-    apt-get install -y tree
+
     tree
   fi
 done
