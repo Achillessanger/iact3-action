@@ -30,6 +30,8 @@ for file in $INPUT_TEMPLATES; do
     python /iact3.py validate -t $file  >> output.txt 2>&1
     echo $file
     cat output.txt
+    echo "-----"
+    python /iact3.py validate -t $file
     if ! grep -q "LegalTemplate" output.txt; then
       pass_test=0
     fi
