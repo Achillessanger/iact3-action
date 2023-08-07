@@ -29,7 +29,7 @@ for file in $INPUT_TEMPLATES; do
   else
     python /iact3.py validate -t $file  >> output.txt 2>&1
     cat output.txt
-    if not grep -q "LegalTemplate" output.txt; then
+    if ! grep -q "LegalTemplate" output.txt; then
       pass_test=0
     fi
     rm -rf output.txt
