@@ -11,19 +11,25 @@ for file in $INPUT_TEMPLATES; do
     continue
   fi
 
-  python /iact3.py test run -t $file -c iact3-config/${file%.*}.iact3.yml
+  if [ -f iact3-config/${file%.*}.iact3.yml ]; then
+    python /iact3.py test run -t $file -c iact3-config/${file%.*}.iact3.yml
 
-  test_name=$(basename $file)
-  test_name=${test_name%.*}
-  test_name="test-${test_name}"
+    test_name=$(basename $file)
+    test_name=${test_name%.*}
+    test_name="test-${test_name}"
 
-  cat iact3_outputs/${test_name}-result.json
+    cat iact3_outputs/${test_name}-result.json
 
-  test_result=$(jq '.Result' iact3_outputs/${test_name}-result.json)
+    test_result=$(jq '.Result' iact3_outputs/${test_name}-result.json)
 
 
-  if [[ $test_result != "\"Success\"" ]]; then
-    pass_test=0
+    if [[ $test_result != "\"Success\"" ]]; then
+      pass_test=0
+    fi
+  else
+    python /iact3.py validate -t $file | grep "LegalTemplate" > output.txt
+    echo "output.txt:\n"
+    cat output.txt
   fi
 done
 
