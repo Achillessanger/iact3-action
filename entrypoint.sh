@@ -30,7 +30,8 @@ for file in $INPUT_TEMPLATES; do
     python /iact3.py validate -t $file  > output.txt
     echo "output.txt:\n"
     cat output.txt
-    ls
+    apt-get install -y tree
+    tree
   fi
 done
 
