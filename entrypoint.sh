@@ -12,6 +12,7 @@ for file in $INPUT_TEMPLATES; do
   fi
 
   if [ -f iact3-config/${file%.*}.iact3.yml ]; then
+    echo $file
     python /iact3.py test run -t $file -c iact3-config/${file%.*}.iact3.yml
 
     test_name=$(basename $file)
