@@ -40,8 +40,10 @@ done
 
 if [ $pass_test -eq 1 ]
 then
+  echo "::set-output name=status::success"
 	exit 0
 else
+  echo "::set-output name=status::failure"
 	exit 1
 fi
 
