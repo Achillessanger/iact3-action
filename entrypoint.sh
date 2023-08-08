@@ -40,10 +40,10 @@ done
 
 if [ $pass_test -eq 1 ]
 then
-  echo "status::success" >> $GITHUB_OUTPUT
+  echo "status=success" >> $GITHUB_OUTPUT
 	exit 0
 else
-  echo "status::failure" >> $GITHUB_OUTPUT
+  echo "status=failure" >> $GITHUB_OUTPUT
 	exit 1
 fi
 
