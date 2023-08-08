@@ -43,7 +43,7 @@ then
   echo "status=success" >> $GITHUB_OUTPUT
 	exit 0
 else
-  echo "status=failure" >> $GITHUB_OUTPUT
+  echo "status=fail" >> $GITHUB_OUTPUT
 	exit 1
 fi
 
