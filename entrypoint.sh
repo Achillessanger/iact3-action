@@ -10,6 +10,10 @@ for file in $INPUT_TEMPLATES; do
   then
     continue
   fi
+  if [[ "$file" == .DS_Store* ]]
+  then
+    continue
+  fi
 
   if [ -f iact3-config/${file%.*}.iact3.yml ]; then
     echo $file
