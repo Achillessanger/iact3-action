@@ -16,7 +16,7 @@ do
   fi
 
   is_test_run=0
-  echo "\n------Testing $file------"
+  echo -e "\n------Testing $file------"
   if [[ "$file" == iact3-config/* ]]; then
     #config file
     template_file_prefix=${file#iact3-config/}
