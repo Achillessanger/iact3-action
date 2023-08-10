@@ -74,7 +74,7 @@ do
     template_prefix_files+=("$template_file_prefix")
   fi
 
-  if [ $is_test_run -eq 0 ]; then
+  if [ $is_test_run -eq 1 ]; then
     test_name=$(basename $template_file_prefix)
     test_name="test-${test_name}"
     cat iact3_outputs/${test_name}-result.json
