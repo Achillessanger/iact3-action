@@ -16,13 +16,12 @@ do
 
   echo -e "\n------Testing $file------"
   python /iact3.py validate -t $file  >> output.txt 2>&1
-  echo $file
   cat output.txt
   if ! grep -q "LegalTemplate" output.txt; then
     pass_test=0
   fi
   rm -rf output.txt
-  
+
 done
 
 if [ $pass_test -eq 1 ]
