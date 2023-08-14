@@ -2,7 +2,9 @@
 
 export ALIBABA_CLOUD_ACCESS_KEY_ID=$INPUT_ACCESS_KEY_ID
 export ALIBABA_CLOUD_ACCESS_KEY_SECRET=$INPUT_ACCESS_KEY_SECRET
-echo $ALIBABA_CLOUD_ACCESS_KEY_ID 
+echo "-----"
+echo $ALIBABA_CLOUD_ACCESS_KEY_ID
+echo "-----"
 pass_test=1
 
 declare -a template_prefix_files=()
