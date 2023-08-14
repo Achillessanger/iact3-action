@@ -4,8 +4,6 @@ export ALIBABA_CLOUD_ACCESS_KEY_ID=$INPUT_ACCESS_KEY_ID
 export ALIBABA_CLOUD_ACCESS_KEY_SECRET=$INPUT_ACCESS_KEY_SECRET
 pass_test=1
 
-tree
-
 for file in $INPUT_TEMPLATES
 do
   if [[ "$file" == .github* ]]; then
