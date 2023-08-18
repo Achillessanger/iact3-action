@@ -34,7 +34,7 @@ Iact3 Action现提供2个版本，`iact3-action@main`版本只提供对模板的
 #### 配置文件
 `iact3-action@v2`版本中，若被测试模板的对应位置有配置文件，则会根据配置文件对模板进行部署测试。模板对应的配置文件必须满足以下条件：
 * 配置文件名称需为模板名称，后缀需为`.iact3.yml`或`.iact3.yaml`
-* 配置文件位置固定为在`iact3-config/`目录下和模板同路径位置处（`name.yml` 对应 `iact3-config/name.iact3.yml`` ）
+* 配置文件位置固定为在`iact3-config/`目录下和模板同路径位置处（`name.yml` 对应 `iact3-config/name.iact3.yml` ）
 * 配置文件中`project`配置项`name`需为`test-{模板名}`
 * 配置文件中可以不包含`template_config:template_location`项，如包含，模版路径需使用相对ros-template仓库根目录的相对路径
 
@@ -44,4 +44,4 @@ Iact3 Action现提供2个版本，`iact3-action@main`版本只提供对模板的
 `iact3-action@v2`版本中，对带有配置文件的模板使用`iact3 test run`命令进行部署测试，其余模板使用`iact3 validate`命令校验合法性。
 
 #### 测试结果
-Iact3 Action对pull request中涉及更改的全部模板和更改的配置文件对应的模板进行测试，如全部模板都通过测试，则输出`status=success`至workflow并返回退出状态码`0`，反之则输出`status=fail`且返回退出状态码`1`。
+Iact3 Action对输入参数`templates`中涉及的全部模板和配置文件对应的模板进行测试，如全部模板都通过测试，则输出`status=success`至workflow并返回退出状态码`0`，反之则输出`status=fail`且返回退出状态码`1`。
